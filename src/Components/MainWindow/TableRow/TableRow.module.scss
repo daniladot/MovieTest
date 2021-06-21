@@ -1,0 +1,168 @@
+.TableRow {
+  width: 100%;
+
+  .RowWrapper {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+
+    .Image {
+      margin-left: 50px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #aba9a9;
+    }
+
+    .Title {
+      margin-left: 30px;
+      font-family: 'Helvetica';
+      font-size: 16px;
+      color: #000000;
+      width: 55%;
+    }
+
+    .Year {
+      margin-left: 30px;
+    }
+
+    .Button {
+      width: 120px;
+      height: 60px;
+      background-color: #26731a;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all .2s ease-out;
+
+
+      &:hover {
+        background-color: #2d941d;
+      }
+    }
+
+    .OpenCommentBlock {
+      margin-right: 50px;
+      position: relative;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url("../../../images/plus-icon.svg") no-repeat center center / contain;
+        transition: all 0.2s ease-out;
+      }
+
+      &:hover {
+        &:after {
+          background: url("../../../images/plus-icon-black.svg") no-repeat center center / contain;
+        }
+      }
+    }
+
+    &[data-color-grey='Y'] {
+      background: #F2F5F9;
+    }
+  }
+
+  .CommentBlock {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    position: relative;
+
+    .Comment {
+      width: 85%;
+      padding: 50px 50px 10px;
+      height: auto;
+      overflow: auto;
+      border: none;
+      border-bottom: 1px solid #aba9a9;
+      resize: none;
+      outline: none;
+      position: relative;
+    }
+
+
+    .addComment{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translate(0, -10%);
+      background: url("../../../images/plus-circle-icon-black-red.svg") no-repeat center center / contain;
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+
+      &:hover{
+        background: url("../../../images/plus-circle-icon-red.svg") no-repeat center center / contain;
+      }
+    }
+  }
+
+  .CommentTableBlock{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    .Comment{
+      width: 85%;
+      padding: 50px 50px 10px;
+      height: auto;
+      overflow: auto;
+      border: none;
+      border-bottom: 1px solid #aba9a9;
+      resize: none;
+      outline: none;
+      position: relative;
+    }
+
+
+    .DeleteComment{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translate(0, -10%);
+      background: url("../../../images/minus-circle-icon-black-red.svg") no-repeat center center / contain;
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+
+      &:hover{
+        background: url("../../../images/minus-circle-icon-red.svg") no-repeat center center / contain;
+      }
+    }
+  }
+
+  &[data-comment-block='Y'] {
+    .CommentBlock {
+      display: flex;
+    }
+
+    .CommentTableBlock{
+      display: flex;
+    }
+  }
+
+
+}
